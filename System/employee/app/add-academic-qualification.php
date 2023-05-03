@@ -12,7 +12,7 @@ $level  = $_POST['level'];
 if ($_FILES["certificate"]["size"] > 1000000) {
 header("location:../academic.php?r=2290");
 }else{
-if ($_FILES["transcript"]["size"] > 1000000) {
+if ($_FILES["transcript"]["size"] > 10000000) {
 header("location:../academic.php?r=2490");
 }else{
 	

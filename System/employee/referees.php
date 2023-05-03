@@ -93,7 +93,7 @@ $page = 1;
 					
 					<div class="logo-wrapper">
 						<div class="logo">
-							<a href="../"><img src="../images/nasugbujobs-logo.png" alt="Logo" /></a>
+							<a href="../"><img src="../images/nasugbujobs-logo1.png" alt="Logo" /></a>
 						</div>
 					</div>
 					
@@ -455,7 +455,7 @@ $page = 1;
 			
 				                    <div class="modal-header">
 					                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-					                 <h4 class="modal-title text-center">Add Referee</h4>
+					                 <h4 class="modal-title text-center">Add Referral</h4>
 				                    </div>
 				
 				                    <div class="modal-body">
@@ -466,7 +466,7 @@ $page = 1;
 									<div class="col-sm-6 col-md-6">
 				
 							        <div class="form-group"> 
-								    <label>Referee Name</label>
+								    <label>Referal Name</label>
 								    <input class="form-control" placeholder="Enter referee name" type="text" name="name" required> 
 							        </div>
 						
@@ -478,7 +478,7 @@ $page = 1;
 						             <div class="col-sm-12 col-md-6">
 						
 							        <div class="form-group"> 
-								    <label>Referee Email</label>
+								    <label>Referral Email</label>
 								    <input class="form-control" placeholder="Enter referee email" type="email" name="email" required> 
 							        </div>
 						
@@ -487,7 +487,7 @@ $page = 1;
 						             <div class="col-sm-12 col-md-6">
 						
 							        <div class="form-group"> 
-								    <label>Referee Title</label>
+								    <label>Referral Title</label>
 								    <input class="form-control" placeholder="Enter referee title" type="text" name="title" required> 
 							        </div>
 						
@@ -496,7 +496,7 @@ $page = 1;
 						             <div class="col-sm-12 col-md-6">
 						
 							        <div class="form-group"> 
-								    <label>Referee Phone</label>
+								    <label>Referral Phone</label>
 								    <input class="form-control" placeholder="Enter referee phone" type="text" name="phone" required> 
 							        </div>
 						

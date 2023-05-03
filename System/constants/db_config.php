@@ -2,5 +2,5 @@
 $servername = "localhost";
 $username = "root";
 $password = "";
-$dbname = "job_portal";
+$dbname = "job_portal2";
 ?>

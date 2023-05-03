@@ -102,7 +102,7 @@ $title = "Job List";
 					
 					<div class="logo-wrapper">
 						<div class="logo">
-							<a href="./"><img src="images/nasugbujobs-logo.png" alt="Logo" /></a>
+							<a href="./"><img src="images/nasugbujobs-logo1.png" alt="Logo" /></a>
 						</div>
 					</div>
 					
@@ -111,7 +111,6 @@ $title = "Job List";
 						<ul class="nav navbar-nav" id="responsive-menu">
 						
 							<li>
-							
 								<a href="./">Home</a>
 								
 							</li>
@@ -202,7 +201,7 @@ $title = "Job List";
 							
 								<div class="col-xss-12 col-xs-6 col-sm-6 col-md-5">
 									<div class="form-group form-lg">
-										<select class="form-control" name="category" required/>
+										<select class="form-control" name="category" />
 										<option value="">-Select category-</option>
 										 <?php
 										 require 'constants/db_config.php';
@@ -238,8 +237,8 @@ $title = "Job List";
 								
 								<div class="col-xss-12 col-xs-6 col-sm-6 col-md-5">
 									<div class="form-group form-lg">
-										<select class="form-control" name="barangay" required/>
-										<option value="">-Select barangay-</option>
+										<select class="form-control" name="barangay" />
+										<option value="">-Select Barangay-</option>
 										 <?php
 										 require 'constants/db_config.php';
 										 try {
@@ -424,6 +423,12 @@ $title = "Job List";
 														<div class="sub-category">
 															<a><?php echo $row['category']; ?></a>
 
+															<div class="col-sm-2 col-md-1"></div>
+															<a><?php echo $row['agereq']; ?></a>
+															<a><?php echo $row['salary']; ?></a>
+															
+														
+
 														</div>
 													</div>
 													
@@ -529,7 +534,7 @@ $title = "Job List";
 									
 										<div class="footer-about-us">
 										<h5 class="footer-title">About Nasugbu Jobs</h5>
-											<p>Nasugbu Jobs is an Online job Application System developed by BSIT-3101-BA Students for their group project in 2022.</p>
+											<p>Nasugbu Jobs is an Online job Application System developed by Team Amigos in 2023.</p>
 										</div>
 
 									</div>
@@ -584,7 +589,7 @@ $title = "Job List";
 							<div class="col-sm-4 col-md-4">
 							
 								<ul class="bottom-footer-menu">
-								<li><a >Developed by BSIT-3101-BA</a></li>
+								<li><a >Developed by Team Amigos</a></li>
 								</ul>
 							
 							</div>

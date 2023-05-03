@@ -40,6 +40,8 @@ foreach($result as $row)
 	$jobbarangay = $row['barangay'];
 	$jobcategory = $row['category'];
 	$jobtype = $row['type'];
+	$agereq = $row['agereq'];
+	$salary = $row['salary'];
 	$experience = $row['experience'];
 	$jobdescription = $row['description'];
 	$jobrespo = $row['responsibility'];
@@ -378,6 +380,40 @@ foreach($result as $row)
 													
 												</div>
 
+												<div class="clear"></div>
+												<div class="col-xss-12 col-xs-6 col-sm-6 col-md-4">
+												
+													<div class="form-group mb-20">
+														<label>Age Requirement: </label>
+														<select name="agereq" required class="selectpicker show-tick form-control" data-live-search="false" data-selected-text-format="count > 3" data-done-button="true" data-done-button-text="OK" data-none-selected-text="All">
+															<option value="" selected>Select</option>
+															<option value="No Age Requirement" >No Age Requirement</option>
+															<option value="18 to 30">18-30 yrs. old</option>
+															<option value="31 to 43" >31-43 yrs. old</option>
+															<option value="44 and above">44 yrs. old and above</option>
+														</select>
+													</div>
+													</div>
+													
+													<div class="col-xss-12 col-xs-6 col-sm-6 col-md-4">
+													<div class="form-group mb-20">
+													<label>Salary Range:</label>
+														<select name="salary" required class="selectpicker show-tick form-control" data-live-search="false" data-selected-text-format="count > 3" data-done-button="true" data-done-button-text="OK" data-none-selected-text="All">
+															<option value="" selected >Select</option>
+															<option value="Salary">Salary</option>
+															<option value=" >₱15,000 ">>₱15,000</option>
+															<option value="₱15,000-₱25,000">₱15,000-₱25,000</option>
+															<option value="₱25,000-₱35,000">₱25,000-₱35,000</option>
+															<option value="₱35,000-₱50,000">₱35,000-₱50,000</option>
+															<option value="₱50,000-₱70,000">₱50,000-₱70,000</option>
+															<option value="₱70,000-₱85,000">₱70,000-₱85,000</option>
+															<option value="₱85,000+">₱85,000+</option>
+														</select>
+												
+														</div>
+													
+													
+												</div>
 												<div class="clear"></div>
 												
 												<div class="col-sm-12 col-md-12">

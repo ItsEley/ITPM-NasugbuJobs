@@ -178,9 +178,7 @@ header("location:../");
 										<li>
 											<a href="my-jobs.php"><i class="fa fa-bookmark"></i> Posted Jobs</a>
 										</li>
-										<li>
-											<a href="view-applicants.php"><i class="fa fa-group"></i> View Applicants</a>
-										</li>
+										
 										<li>
 											<a href="../logout.php"><i class="fa fa-sign-out"></i> Logout</a>
 										</li>
@@ -291,7 +289,7 @@ header("location:../");
 												
 													<div class="form-group">
 														<label>Barangay</label>
-														<select name="barangay" required class="selectpicker show-tick form-control" data-live-search="true">
+														<select name="barangay" required class="selectpicker show-tick form-control" data-live-search="false">
 															<option disabled value="">Select</option>
 						                                   <?php
 														   require '../constants/db_config.php';
@@ -377,6 +375,8 @@ header("location:../");
 														<label>Expertise</label>
 														<textarea name="expertise" class="bootstrap3-wysihtml5 form-control" placeholder="Enter company expertise ..." style="height: 200px;"><?php echo "$myex"; ?></textarea>
 													</div>
+
+													
 													
 												</div>
 												

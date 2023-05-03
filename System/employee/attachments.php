@@ -96,7 +96,7 @@ $page = 1;
 					
 					<div class="logo-wrapper">
 						<div class="logo">
-							<a href="../"><img src="../images/nasugbujobs-logo.png" alt="Logo" /></a>
+							<a href="../"><img src="../images/nasugbujobs-logo1.png" alt="Logo" /></a>
 						</div>
 					</div>
 					

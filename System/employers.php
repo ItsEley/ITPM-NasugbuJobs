@@ -91,7 +91,7 @@ $page = 1;
 					
 					<div class="logo-wrapper">
 						<div class="logo">
-							<a href="./"><img src="images/nasugbujobs-logo.png" alt="Logo" /></a>
+							<a href="./"><img src="images/nasugbujobs-logo1.png" alt="Logo" /></a>
 						</div>
 					</div>
 					
@@ -271,10 +271,6 @@ $page = 1;
 
                              } ?>
 
-							
-
-								
-
 								
 							</div>
 						
@@ -351,7 +347,7 @@ $page = 1;
 									
 										<div class="footer-about-us">
 										<h5 class="footer-title">About Nasugbu Jobs</h5>
-											<p>Nasugbu Jobs is an Online job Application System developed by BSIT-3101-BA Students for their group project in 2022.</p>
+											<p>Nasugbu Jobs is an Online job Application System developed by Team Amigos in 2023.</p>
 		
 										</div>
 
@@ -406,7 +402,7 @@ $page = 1;
 							
 								<ul class="bottom-footer-menu">
 									
-								<li><a >Developed by BSIT-3101-BA</a></li>
+								<li><a >Developed by Team Amigos</a></li>
 								</ul>
 							
 							</div>

@@ -161,7 +161,7 @@ header("location:../");
 										
 										
 										<h4><?php echo "$myfname"; ?> <?php echo "$mylname"; ?></h4>
-										<p class="user-role"><?php echo "$mytitle"; ?></p>
+										<p class="user-role"><?php echo "$myrole"; ?></p>
 										
 									</div>
 									
@@ -174,11 +174,17 @@ header("location:../");
 										<li  class="active">
 											<a href="./"><i class="fa fa-user"></i> Profile</a>
 										</li>
-										<li class="">
+										<li>
 										<a href="change-password.php"><i class="fa fa-key"></i> Change Password</a>
 										</li>
 										<li>
-											<a href="view-dashboard.php"><i class="fa fa-group"></i>View Verification</a>
+											<a href="view-dashboard.php"><i class="fa fa-bar-chart"></i>View Dashboard</a>
+									</li>
+									<li>
+											<a href="view-employers.php"><i class="fa fa fa-building"></i>View Employers</a>
+									</li>
+									<li class="">
+											<a href="view-applicants.php"><i class="fa fa-users"></i>View Applicants</a>
 									</li>
 										<li>
 											<a href="../logout.php"><i class="fa fa-sign-out"></i> Logout</a>
@@ -351,7 +357,7 @@ header("location:../");
 							<div class="col-sm-4 col-md-4">
 							
 								<ul class="bottom-footer-menu">
-								<li><a >Developed by BSIT-3101-BA</a></li>
+								<li><a >Developed by Team Amigos</a></li>
 								</ul>
 							
 							</div>

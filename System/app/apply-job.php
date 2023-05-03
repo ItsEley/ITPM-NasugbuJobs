@@ -43,7 +43,8 @@ include '../constants/db_config.php';
 	
 	print '<br>
 	 <div class="alert alert-success">
-     You have successfully applied for this job.
+     Job Application sent to Employer.
+     Application Pending, wait for employer to contact you.
 	 </div>
      ';
 					  

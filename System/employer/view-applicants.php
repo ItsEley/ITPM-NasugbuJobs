@@ -1,7 +1,7 @@
+
 <!doctype html>
 <html lang="en">
 <?php 
-
 require '../constants/settings.php'; 
 require 'constants/check-login.php';
 
@@ -31,7 +31,7 @@ header("location:../");
 if (isset($_GET['jobid'])) {
 require'../constants/db_config.php';
 $job_id = $_GET['jobid'];
-
+$_SESSION['jobid2'] = $job_id;
 try {
 $conn = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password);
 $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);

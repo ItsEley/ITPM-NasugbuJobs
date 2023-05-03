@@ -336,12 +336,72 @@ header("location:../");
 														</select>
 													</div>
 													
-													
 												</div>
 
 												<div class="clear"></div>
+												<div class="col-xss-12 col-xs-6 col-sm-6 col-md-4">
 												
-												<div class="col-sm-12 col-md-12">
+													<div class="form-group mb-20">
+														<label>Age Requirement: </label>
+												
+															<select name="agereq" required class="selectpicker show-tick form-control" data-live-search="true">
+															<option disabled value="">Select</option>
+						                                   <?php
+														   require '../constants/db_config.php';
+														   try {
+                                                           $conn = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password);
+                                                           $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+
+	
+                                                           $stmt = $conn->prepare("SELECT * FROM tbl_agereq ORDER BY id");
+                                                           $stmt->execute();
+                                                           $result = $stmt->fetchAll();
+  
+                                                           foreach($result as $row)
+                                                           {
+		                                                    ?> <option value="<?php echo $row["age_code"]; ?>"><?php echo $row["age_code"]; ?></option> <?php
+	 
+	                                                        }
+
+					  
+	                                                       }catch(PDOException $e)
+                                                           {
+
+                                                           }
+	
+														   ?>
+														</select>
+													</div>
+													</div>
+													
+													<div class="col-xss-12 col-xs-6 col-sm-6 col-md-4">
+													<div class="form-group mb-20">
+													<label>Salary Range:</label>
+														<select name="salary" required class="selectpicker show-tick form-control" data-live-search="false" data-selected-text-format="count > 3" data-done-button="true" data-done-button-text="OK" data-none-selected-text="All">
+															<option value="" selected >Select</option>
+															<option value="Salary">Salary</option>
+															<option value=" >PHP.15,000 ">>PHP.15,000</option>
+															<option value="PHP.15,000-PHP.25,000">PHP.15,000-PHP.25,000</option>
+															<option value="PHP.25,000-PHP.35,000">PHP.25,000-PHP.35,000</option>
+															<option value="PHP.35,000-PHP.50,000">PHP.35,000-PHP.50,000</option>
+															<option value="PHP.50,000-PHP.70,000">PHP.50,000-PHP.70,000</option>
+															<option value="PHP.70,000-PHP.85,000">PHP.70,000-PHP.85,000</option>
+															<option value="PHP.85,000+">PHP.85,000+</option>
+														</select>
+												
+														</div>
+													
+													
+												</div>
+
+												
+													
+								
+												<div class="clear"></div>
+												
+												
+												
+												<div class="col-sm-12 col-md-12">	
 												
 													<div class="form-group bootstrap3-wysihtml5-wrapper">
 														<label>Job Description</label>

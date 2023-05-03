@@ -17,7 +17,7 @@ $token = $_GET['token'];
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 
-	<title>Nasugbu Jobs - Reset<?php echo "$compname"; ?></title>
+	<title>Nasugbu Jobs - Reset</title>
 	<meta name="description" content="Online Job Application System" />
 	<meta name="keywords" content="job, work, resume, applicants, application, employee, employer, hire, hiring, human resource management, hr, online job management, company, worker, career, recruiting, recruitment" />
 	<meta name="author" content="BatState">
@@ -68,7 +68,7 @@ $token = $_GET['token'];
 					
 					<div class="logo-wrapper">
 						<div class="logo">
-							<a href="./"><img src="images/nasugbujobs-logo.png" alt="Logo" /></a>
+							<a href="./"><img src="images/nasugbujobs-logo1.png" alt="Logo" /></a>
 						</div>
 					</div>
 					
@@ -252,24 +252,24 @@ $token = $_GET['token'];
 	
                                 ?>
 												
-</div>
+												</div>
 
-</div>
-<?php
-if (isset($invalid_token)) {
-	
-}else{
-print '
-<div class="modal-footer text-center">
-<button type="submit" onclick="return val();"  class="btn btn-primary">Reset my password</button>
-</div>';	
-}
+												</div>
+												<?php
+												if (isset($invalid_token)) {
+													
+												}else{
+												print '
+												<div class="modal-footer text-center">
+												<button type="submit" onclick="return val();"  class="btn btn-primary">Reset my password</button>
+												</div>';	
+												}
 
-?>
+												?>
 
-										
-</div>
-</form>
+																						
+												</div>
+												</form>
 									
 								</div>
 							
@@ -298,7 +298,7 @@ print '
 									
 										<div class="footer-about-us">
 											<h5 class="footer-title">About Nasugbu Jobs</h5>
-											<p>Nasugbu Jobs is an Online job Application System developed by BSIT-3101-BA Students for their group project in 2022.</p>
+											<p>Nasugbu Jobs is an Online job Application System developed by Team Amigos in 2023.</p>
 										
 										</div>
 
@@ -354,7 +354,7 @@ print '
 							<div class="col-sm-4 col-md-4">
 							
 								<ul class="bottom-footer-menu">
-									<li><a >Developed by BSIT-3101-BA</a></li>
+								<li><a >Developed by Team Amigos</a></li>
 								</ul>
 							
 							</div>

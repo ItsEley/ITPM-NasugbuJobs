@@ -80,7 +80,7 @@ header("location:../");
 					
 					<div class="logo-wrapper">
 						<div class="logo">
-							<a href="../"><img src="../images/nasugbujobs-logo.png" alt="Logo" /></a>
+							<a href="../"><img src="../images/nasugbujobs-logo1.png" alt="Logo" /></a>
 						</div>
 					</div>
 					
@@ -95,7 +95,7 @@ header("location:../");
 							</li>
 							
 							<li>
-								<a href="../job-list.php">Job List</a>
+								<a href="../job-list.php">Jobs</a>
 
 							</li>
 							
@@ -166,7 +166,7 @@ header("location:../");
 										
 										
 										<h4><?php echo "$myfname"; ?> <?php echo "$mylname"; ?></h4>
-										<p class="user-role"><?php echo "$mytitle"; ?></p>
+										<p class="user-role"><?php echo "$myrole"; ?></p>
 										
 									</div>
 									
@@ -183,8 +183,14 @@ header("location:../");
 										</li>
 										
 										<li>
-											<a href="applied-jobs.php"><i class="fa fa-group"></i> View Verification</a>
+											<a href="view-dashboard.php"><i class="fa fa-bar-chart"></i> View Dashboard</a>
 										</li>
+										<li>
+											<a href="view-employers.php"><i class="fa fa fa-building"></i>View Employers</a>
+									</li>
+									<li class="">
+											<a href="view-applicants.php"><i class="fa fa-users"></i>View Applicants</a>
+									</li>
 										<li>
 											<a href="../logout.php"><i class="fa fa-sign-out"></i> Logout</a>
 										</li>
@@ -200,16 +206,46 @@ header("location:../");
 
 									<div class="admin-section-title">
 									
-										<h2></h2>
+										<h2>Change Password</h2>
 	
 										
 									</div>
 									
 									
 											
-										</form>
-									
-								</div>
+									<form name="frm" class="post-form-wrapper" action="app/new-pass.php" method="POST">
+								
+											<div class="row gap-20">
+                                             <?php include 'constants/check_reply.php'; ?>
+												
+												<div class="col-sm-6 col-md-4">
+												
+													<div class="form-group">
+														<label>New Password</label>
+														<input type="password" class="form-control" name="password" required placeholder="Enter your new password">
+													</div>
+													
+												</div>
+												
+												<div class="clear"></div>
+												
+												<div class="col-sm-6 col-md-4">
+												
+													<div class="form-group">
+														<label>Confirm Password</label>
+														<input type="password" class="form-control"  name="confirmpassword" required placeholder="Confirm your new password">
+													</div>
+													
+												</div>
+												
+												<div class="col-sm-12 mt-10">
+													<button type="submit" onclick="return check_passwords();" class="btn btn-primary">Update</button>
+													<button type="reset" class="btn btn-primary btn-inverse">Cancel</a>
+												</div>
+
+											</div>
+											
+										</form><br>
 
 							</div>
 							
@@ -236,7 +272,7 @@ header("location:../");
 									
 										<div class="footer-about-us">
 										<h5 class="footer-title">About Nasugbu Jobs</h5>
-											<p>Nasugbu Jobs is an Online job Application System developed by BSIT-3101-BA Students for their group project in 2022.</p>
+										<p>Nasugbu Jobs is an Online job Application System developed by Team Amigos in 2023.</p>
 										</div>
 
 									</div>
@@ -290,7 +326,7 @@ header("location:../");
 							
 								<ul class="bottom-footer-menu">
 									
-									<li><a >Developed by BSIT-3101-BA</a></li>
+								<li><a >Developed by Team Amigos</a></li>
 								</ul>
 							
 							</div>

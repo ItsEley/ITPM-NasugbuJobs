@@ -1,11 +1,14 @@
 <!doctype html>
 <html lang="en">
 <?php 
+session_start();
+$jobid2 = $_SESSION['jobid2'];
 require 'constants/settings.php'; 
 require 'constants/check-login.php';
 require 'constants/db_config.php';
 if (isset($_GET['empid'])) {
 $empid = $_GET['empid'];
+
 
 try {
     $conn = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password);
@@ -34,7 +37,9 @@ try {
 	$about = $row['about'];
 	$empavatar = $row['avatar'];
 	$current_year = date('Y');
-	$myage = $current_year - $byear;
+	settype($current_year,"integer"); 
+	settype($byear,"integer"); 
+	$myage = ($current_year - $byear);
 	$myedu = $row['education'];
 	$mytitle = $row['title'];
 	$mymail = $row['email'];
@@ -127,7 +132,7 @@ header("location:./");
 					
 					<div class="logo-wrapper">
 						<div class="logo">
-							<a href="./"><img src="images/nasugbujobs-logo.png" alt="Logo" /></a>
+							<a href="./"><img src="images/nasugbujobs-logo1.png" alt="Logo" /></a>
 						</div>
 					</div>
 					
@@ -354,10 +359,21 @@ header("location:./");
                                                 {
                                                 ?>
 												<li>
-												<h5><?php echo $row['title']; ?> </h5>
+												<h5><?php echo $row['title']; 
+												
+												$startdate = $row['start_date'];
+												$enddate = $row['end_date'];
+
+												$sdate = strtotime("$startdate");
+												$edate = strtotime("$enddate");
+												$datediff = $edate - $sdate;
+												
+												?> </h5>
+												
 												<p class="text-muted font-italic"><?php echo $row['start_date']; ?> to <?php echo $row['end_date']; ?><span class="font600 text-primary"> <?php echo $row['institution']; ?></span></p>
-												<p>Supervisor : <span class="font600 text-primary"> <?php echo $row['supervisor']; ?></span> , Phone : <span class="font600 text-primary"> <?php echo $row['supervisor_phone']; ?></span> <br><?php echo $row['duties']; ?></p>
-												</li>
+												<p>Supervisor : <span class="font600 text-primary"> <?php echo $row['supervisor']; ?></span> , Phone : <span class="font600 text-primary"> <?php echo $row['supervisor_phone']; ?></span> <br><?php echo $row['duties']; ?><span class="font600 text-primary"> <?php echo ($datediff / (60 * 60 * 24)); ?></p>
+											
+											</li>
 												<?php
 	                                            }
 	
@@ -543,7 +559,7 @@ header("location:./");
 												</ul>
 										
 										
-										<h3>Referees</h3>
+										<h3>Referrals</h3>
 										<ul class="list-icon">
 												<?php
 												require 'constants/db_config.php';
@@ -591,6 +607,144 @@ header("location:./");
 																
 											
 										</ul>
+
+																<?php
+																	require 'constants/db_config.php';
+																	
+																	$conn = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password);
+																	$conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+																	$stmt = $conn->prepare("SELECT * FROM tbl_professional_qualification WHERE member_no = :empid ORDER BY id");
+																	$stmt->bindParam(':empid', $empid);
+																	$stmt->execute();
+																	$result = $stmt->fetchAll();
+																	$certcount = count($result);
+
+																	$conn = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password);
+																	$conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+																	$stmt = $conn->prepare("SELECT * FROM tbl_training WHERE member_no = :empid ORDER BY id");
+																	$stmt->bindParam(':empid', $empid);
+																	$stmt->execute();
+																	$result = $stmt->fetchAll();
+																	$trainingcount = count($result);
+
+																	$stmtb = $conn->prepare("SELECT * FROM tbl_users WHERE role = 'employee' AND member_no = '$empid'");
+																	$stmtb->execute();
+																	$resultb = $stmtb->fetchAll();
+																	foreach ($resultb as $rowb)
+
+																	$stmtb = $conn->prepare("SELECT * FROM tbl_jobs WHERE job_id = '$jobid2'");
+																	$stmtb->execute();
+																	$resultb = $stmtb->fetchAll();
+																	foreach ($resultb as $rowb2)
+
+
+																	
+																	?>
+																
+														
+																	
+
+										<h3>Job Match</h3>
+												
+								
+										<?php echo $certcount ?>
+										<?php echo $trainingcount ?>
+										<?php echo $rowb['title'] ?>
+										<?php echo "$myedu"; ?>
+										<?php echo $myage?>
+										<?php echo $jobid2?>
+										<?php echo $rowb2['category'] ?>
+										<?php echo $rowb2['agereq'] ?>
+										<?php echo $rowb2['barangay'] ?>
+										<?php echo $mybarangay ?>
+
+										<?php
+									
+										
+											$match1 = 0;
+											if($rowb2['category'] == $mytitle){
+												$match1 += 30;
+											} else{
+												$match1 += 0;
+											}
+											
+											$match2 = 0;
+											if($rowb2['barangay'] == $mybarangay){
+												$match2 += 30;
+											} else{
+												$match2 += 0;
+											}
+
+											$trainingmatch = $trainingcount * 2;
+											if($trainingmatch > 10){
+												$training1 = 10;
+											}else{
+												$training1 = $trainingmatch;
+											}
+
+											$certmatch = $certcount * 2;
+											if($certmatch > 10){
+												$cert1 = 10;
+											}else{
+												$cert1 = $certmatch;
+											}
+
+											$agematch = 0;
+											if($rowb2['agereq'] == 0){
+												$agematch += 20;
+
+											}elseif ($rowb2['agereq'] == 18) {
+												if($myage>18 and $myage<31){
+													$agematch += 20;
+
+												}else{
+													$agematch += 0;
+												}
+												
+											}elseif($rowb2['agereq'] == 31){
+												if($myage>31 and $myage<44){
+													$agematch += 20;
+
+												}else{
+													$agematch += 0;
+												}
+
+											}elseif($rowb2['agereq'] == 44){
+												if($myage>44 ){
+													$agematch += 20;
+
+												}else{
+													$agematch += 0;
+												}
+
+											}
+
+											$finalmatch = $match2 + $match1 + $training1 + $cert1 +$agematch;
+
+											
+											// $ageparameter =0;
+
+											// if($rowb2['agereq'] = 0){
+											// 	$ageparameter = 0;
+											// }elseif ($rowb2['agereq'] = 18) {
+
+											// 	$ageparameter = 18;
+											// }elseif ($rowb2['agereq'] = 31) {
+
+											// 	$ageparameter = 31;
+											// }elseif ($rowb2['agereq'] = 44) {
+
+											// 	$ageparameter = 44;
+											// }
+											
+										
+										?>
+
+												 <h3>This applicant is <a class="text-danger"><?php echo $finalmatch."%"; ?></a> matched for the job .</h3>
+												 
+										<ul>
+
+										</ul>
 										
 									</div>
 
@@ -623,7 +777,7 @@ header("location:./");
 									
 										<div class="footer-about-us">
 										<h5 class="footer-title">About Nasugbu Jobs</h5>
-											<p>Nasugbu Jobs is an Online job Application System developed by BSIT-3101-BA Students for their group project in 2022.</p>
+										<p>Nasugbu Jobs is an Online job Application System developed by Team Amigos in 2023.</p>
 										
 										</div>
 
@@ -679,7 +833,7 @@ header("location:./");
 							<div class="col-sm-4 col-md-4">
 							
 								<ul class="bottom-footer-menu">
-								<li><a >Developed by BSIT-3101-BA</a></li>
+								<li><a >Developed by Team Amigos</a></li>
 								</ul>
 							
 							</div>

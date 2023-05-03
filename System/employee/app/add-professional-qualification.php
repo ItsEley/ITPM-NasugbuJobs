@@ -7,7 +7,7 @@ $institution = ucwords($_POST['institution']);
 $timeframe = ucwords($_POST['timeframe']);
 $certificate = addslashes(file_get_contents($_FILES['certificate']['tmp_name']));
 
-if ($_FILES["certificate"]["size"] > 1000000) {
+if ($_FILES["certificate"]["size"] > 100000000) {
 header("location:../qualifications.php?r=2290");
 }else{
 	

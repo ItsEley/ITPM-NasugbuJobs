@@ -1,3 +1,4 @@
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 <?php
 include '../constants/settings.php';
 
@@ -7,7 +8,7 @@ $mymessage = $_POST['message'];
 
 require '../mail/PHPMailerAutoload.php';
 
-$mail = new PHPMailer;
+$mail = new PHPMailer(true);
 
 
 $mail->isSMTP();                                      
@@ -24,7 +25,10 @@ $mail->addAddress($contact_mail);
 $mail->isHTML(true);
 
 $mail->Subject = 'Contact';
-$mail->Body    = "<h3>Email from : $myemail</h3><br><br><h3>Message : $mymessage</h3>";
+$mail->Body    = "
+    Email from : $myemail
+
+    <br><h3>Message : $mymessage</h3>";
 $mail->AltBody = $mymessage;
 
 if(!$mail->send()) {

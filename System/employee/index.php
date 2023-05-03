@@ -206,17 +206,15 @@ header("location:../");
 										<a href="change-password.php"><i class="fa fa-key"></i> Change Password</a>
 										</li>
 										<li>
-											<a href="qualifications.php"><i class="fa fa-trophy"></i> Professional Qualifications</a>
+											<a href="qualifications.php"><i class="fa fa-trophy"></i> Professional Certifications</a>
 										</li>
-										<li>
-											<a href="language.php"><i class="fa fa-language"></i> Language Proficiency</a>
-										</li>
+										
 										<li>
 											<a href="training.php"><i class="fa fa-gears"></i> Training & Workshop</a>
 										</li>
 
 										<li>
-											<a href="referees.php"><i class="fa fa-users"></i> Referees</a>
+											<a href="referees.php"><i class="fa fa-users"></i> Referals</a>
 										</li>
 										<li>
 											<a href="academic.php"><i class="fa fa-graduation-cap"></i> Academic Qualifications</a>
@@ -229,9 +227,6 @@ header("location:../");
 										</li>
 										<li>
 											<a href="applied-jobs.php"><i class="fa fa-bookmark"></i> Applied Jobs</a>
-										</li>
-										<li>
-											<a href="verify-account.php"><i class="fa fa-bookmark"></i> Verify Account</a>
 										</li>
 										<li>
 											<a href="../logout.php"><i class="fa fa-sign-out"></i> Logout</a>
@@ -283,7 +278,7 @@ header("location:../");
 												<div class="col-sm-6 col-md-4">
 												
 													<div class="form-group">
-														<label>Born</label>
+														<label>Birthdate</label>
 														<div class="row gap-5">
 															<div class="col-xs-3 col-sm-3">
 																<select name="date" required class="selectpicker form-control" data-live-search="false">
@@ -353,17 +348,54 @@ header("location:../");
 												<div class="clear"></div>
 
 												<div class="form-group">
-												
-													<div class="col-sm-12">
-														<label>Education Level</label>
+													
+													<div class="col-sm-6 col-md-4">
+
+														<div class="form-group">
+															<label>Education Level</label>
+															<select name="education" required class="selectpicker show-tick form-control" data-live-search="true">
+																<option disabled value="">Select</option>
+																<option <?php if ($myedu == "High/Senior High") { print ' selected '; } ?> value="High/Senior High">High/Senior High</option>
+																<option <?php if ($myedu == "Diploma") { print ' selected '; } ?>value="Diploma">Diploma</option>
+																<option <?php if ($myedu == "Bachelor") { print ' selected '; } ?>value="Bachelor">Bachelor</option>
+																<option <?php if ($myedu == "Master") { print ' selected '; } ?>value="Master">Master</option>
+																<option <?php if ($myedu == "Doctor") { print ' selected '; } ?>value="Doctor">Doctor</option>
+															</select>
+														</div>
 													</div>
 													
 													<div class="col-sm-6 col-md-4">
-                                                    <input value="<?php echo "$myedu"; ?>" name="education" type="text" required class="form-control" placeholder="Eg: Diploma, Degree...etc">
-													</div>
-													
-													<div class="col-sm-6 col-md-4">
-														<input value="<?php echo "$mytitle"; ?>" name="title" required type="text" class="form-control mb-15" placeholder="Eg: Computer Science, IT...etc">
+													<div class="form-group">
+															<label>Industry</label>
+															<select name="title" required class="selectpicker show-tick form-control" data-live-search="true">
+																<option disabled value="">Select</option>
+																<option <?php if ($mytitle == "Accounting") { print ' selected '; } ?> value="Accounting">Accounting</option>
+																<option <?php if ($mytitle == "Auditing") { print ' selected '; } ?>value="Auditing">Auditing</option>
+																<option <?php if ($mytitle == "Banking and Financial Services") { print ' selected '; } ?>value="Banking and Financial Services">Banking and Financial Services</option>
+																<option <?php if ($mytitle == "CEO and General Management") { print ' selected '; } ?>value="CEO and General Management">CEO and General Management</option>
+																<option <?php if ($mytitle == "Community and Social Devt") { print ' selected '; } ?>value="Community and Social Devt">Community and Social Devt</option>
+																<option <?php if ($mytitle == "Creative and Design") { print ' selected '; } ?> value="Creative and Design">Creative and Design</option>
+																<option <?php if ($mytitle == "Education and Training") { print ' selected '; } ?>value="Education and Training">Education and Training</option>
+																<option <?php if ($mytitle == "Engineering and Construction") { print ' selected '; } ?>value="Engineering and Construction">Engineering and Construction</option>
+																<option <?php if ($mytitle == "Farming and Agribusiness") { print ' selected '; } ?>value="Farming and Agribusiness">Farming and Agribusiness</option>
+																<option <?php if ($mytitle == "Healthcare and Pharmaceutical") { print ' selected '; } ?>value="Healthcare and Pharmaceutical">Healthcare and Pharmaceutical</option>
+																<option <?php if ($mytitle == "HR & Administration") { print ' selected '; } ?> value="HR & Administration">HR & Administration</option>
+																<option <?php if ($mytitle == "IT and Telecoms") { print ' selected '; } ?>value="IT and Telecoms">IT and Telecoms</option>
+																<option <?php if ($mytitle == "Legal") { print ' selected '; } ?>value="Legal">Legal</option>
+																<option <?php if ($mytitle == "Manufacturing") { print ' selected '; } ?>value="Manufacturing">Manufacturing</option>
+																<option <?php if ($mytitle == "Marketing,Media and Brand") { print ' selected '; } ?>value="Marketing,Media and Brand">Marketing,Media and Brand</option>
+																<option <?php if ($mytitle == "Mining and Natural Resources") { print ' selected '; } ?> value="Mining and Natural Resources">Mining and Natural Resources</option>
+																<option <?php if ($mytitle == "Project & Programme Mngmnt") { print ' selected '; } ?>value="Project & Programme Mngmnt">Project & Programme Mngmnt</option>
+																<option <?php if ($mytitle == "Research,Science and Biotech") { print ' selected '; } ?>value="Research,Science and Biotech">Research,Science and Biotech</option>
+																<option <?php if ($mytitle == "Security") { print ' selected '; } ?>value="Security">Security</option>
+																<option <?php if ($mytitle == "Strategy and Consulting") { print ' selected '; } ?>value="Strategy and Consulting">Strategy and Consulting</option>
+																<option <?php if ($mytitle == "Tourism and Travel") { print ' selected '; } ?> value="Tourism and Travel">Tourism and Travel</option>
+																<option <?php if ($mytitle == "Trades and Services") { print ' selected '; } ?>value="Trades and Services">Diploma</option>
+																<option <?php if ($mytitle == "Transport and Logistics") { print ' selected '; } ?>value="Transport and Logistics">Transport and Logistics</option>
+																<option <?php if ($mytitle == "Other") { print ' selected '; } ?>value="Other">Other</option>
+																
+															</select>
+														</div>
 													</div>
 														
 												</div>
@@ -373,7 +405,7 @@ header("location:../");
 												<div class="col-sm-6 col-md-4">
 												
 													<div class="form-group">
-														<label>Gender</label>
+														<label>Sex</label>
 														<select name="gender" required class="selectpicker show-tick form-control" data-live-search="false">
 															<option disabled value="">Select</option>
 															<option <?php if ($mygender == "Male") { print ' selected '; } ?> value="Male">Male</option>

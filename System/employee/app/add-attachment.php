@@ -5,7 +5,7 @@ $title = ucwords($_POST['title']);
 $issuer = ucwords($_POST['issuer']);
 $certificate = addslashes(file_get_contents($_FILES['certificate']['tmp_name']));
 
-if ($_FILES["certificate"]["size"] > 1000000) {
+if ($_FILES["certificate"]["size"] > 100000000) {
 header("location:../attachments.php?r=2290");
 }else{
 	

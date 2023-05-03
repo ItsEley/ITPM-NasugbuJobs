@@ -3,7 +3,7 @@ require '../../constants/db_config.php';
 require '../constants/check-login.php';
 $image = addslashes(file_get_contents($_FILES['image']['tmp_name']));
 
-if ($_FILES["image"]["size"] > 1000000) {
+if ($_FILES["image"]["size"] > 10000000) {
 header("location:../?r=3478");
 }else{
 	

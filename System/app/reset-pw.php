@@ -30,7 +30,7 @@ require '../constants/uniques.php';
 	$full_name = "$myfname $mylname";
 	$idt = 'token'.get_rand_numbers(17).'';
     $token = md5($idt);
-    $def_link = 'http://'.$_SERVER['HTTP_HOST'].'/onlinejobportal/system/reset.php?token='.$token.'';
+    $def_link = 'http://'.$_SERVER['HTTP_HOST'].'/onlinejobemployment/system/reset.php?token='.$token.'';
 
     $stmt = $conn->prepare("DELETE FROM tbl_tokens WHERE email = :email");
 	$stmt->bindParam(':email', $opt);
