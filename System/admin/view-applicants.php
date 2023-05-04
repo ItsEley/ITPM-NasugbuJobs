@@ -20,7 +20,7 @@ header("location:../");
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 
-	<title>Nasugbu Jobs - <?php echo "$compname"; ?></title>
+	<title>Nasugbu Jobs - View Applicants</title>
 	<meta name="description" content="Online Job Application System" />
 	<meta name="keywords" content="job, work, resume, applicants, application, employee, employer, hire, hiring, human resource management, hr, online job management, company, worker, career, recruiting, recruitment" />
 	<meta name="author" content="BatState">
@@ -211,6 +211,7 @@ header("location:../");
 	
 										
 									</div>
+									<?php require 'constants/check_reply.php'; ?>
 									
 									
 									<div class="container-fluid">
@@ -256,15 +257,13 @@ header("location:../");
                                                                     ?>   
                                                     <tr>
                                                         
-                                                        <td class="text-center"><?php echo  $firstname.' '.$lastname ; ?></td>
+                                                        <td class="text-center"><?php echo  $firstname.' '.$lastname; ?></td>
                                                         <td class="text-center"><?php echo $title;?></td>
                                                         <td class="text-center"><?php echo $applied_count ?></td>
                                                       
-                                                        <td>
-                                                            <a href="edit.php?id=" class="edit_btn btn btn-primary" >Edit</a>
-                                                        </td>
-                                                        <td>
-                                                            <a href="delete.php?id=" class="del_btn btn btn-danger">Delete</a>
+                                                       
+                                                        <td class="text-center">
+														<a href="delete-applicant.php?member_no=<?php echo $memberno ?> " class="del_btn btn btn-danger">Delete</a>
                                                         </td>
                                                     </tr>
                                                     <?php
@@ -282,9 +281,7 @@ header("location:../");
                                         </div>
                                             
                                         </div>
-                                                                
-									
-									/// content end
+<!-- end -->
 							</div>
 							
 						</div>

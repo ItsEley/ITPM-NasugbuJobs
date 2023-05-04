@@ -13,6 +13,7 @@ $type = $_POST['jobtype'];
 $exp = $_POST['experience'];
 $agereq = $_POST['agereq'];
 $salary = $_POST['salary'];
+$education = $_POST['education'];
 $desc = ucfirst($_POST['description']);
 $rec = ucfirst($_POST['requirements']);
 $res = ucfirst($_POST['responsiblities']);
@@ -23,8 +24,8 @@ $conn = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password);
 $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
 	
-$stmt = $conn->prepare("INSERT INTO tbl_jobs (job_id, title, city, barangay, category, type, experience, agereq, salary, description, responsibility, requirements, company, date_posted, closing_date)
- VALUES (                                   :jobid, :title, :city, :barangay, :category, :type, :experience, :agereq, :salary, :description, :responsibility, :requirements, :company, :dateposted, :closingdate)");
+$stmt = $conn->prepare("INSERT INTO tbl_jobs (job_id, title, city, barangay, category, type, experience, agereq, salary, education, description, responsibility, requirements, company, date_posted, closing_date)
+ VALUES (                                   :jobid, :title, :city, :barangay, :category, :type, :experience, :agereq, :salary, :education, :description, :responsibility, :requirements, :company, :dateposted, :closingdate)");
 $stmt->bindParam(':jobid', $job_id);
 $stmt->bindParam(':title', $title);
 $stmt->bindParam(':city', $city);
@@ -34,6 +35,7 @@ $stmt->bindParam(':type', $type);
 $stmt->bindParam(':experience', $exp);
 $stmt->bindParam(':agereq', $agereq);
 $stmt->bindParam(':salary', $salary);
+$stmt->bindParam(':education', $education);
 $stmt->bindParam(':description', $desc);
 $stmt->bindParam(':responsibility', $res);
 $stmt->bindParam(':requirements', $rec);

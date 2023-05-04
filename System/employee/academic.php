@@ -183,7 +183,7 @@ $page = 1;
 										
 										
 										<h4><?php echo "$myfname"; ?> <?php echo "$mylname"; ?></h4>
-										<?php echo "$stats";?>
+									
 										<p class="user-role"><?php echo "$mytitle"; ?></p>
 										
 									</div>
@@ -653,7 +653,7 @@ $page = 1;
 										<ul class="footer-menu clearfix">
 											<li><a href="../">Home</a></li>
 											<li><a href="../job-list.php">Job List</a></li>
-											<li><a href="../employers.php">Employers</a></li>
+											<li><a href="../employers.php">Companies</a></li>
 											<li><a href="../contact.php">Contact Us</a></li>
 											<li><a href="#">Go to top</a></li>
 

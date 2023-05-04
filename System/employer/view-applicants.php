@@ -124,7 +124,7 @@ $job_title = $row['title'];
 					
 					<div class="logo-wrapper">
 						<div class="logo">
-							<a href="./"><img src="../images/nasugbujobs-logo.png" alt="Logo" /></a>
+							<a href="./"><img src="../images/nasugbujobs-logo1.png" alt="Logo" /></a>
 						</div>
 					</div>
 					
@@ -220,7 +220,7 @@ $job_title = $row['title'];
 					<div class="sorting-wrappper">
 			
 						<div class="sorting-header">
-							<h3 class="sorting-title">Job Applicants <?php echo "$job_title"; ?></h3>
+							<h3 class="sorting-title">Job Applicants for <?php echo "$job_title"; ?></h3>
 						</div>
 						
 		

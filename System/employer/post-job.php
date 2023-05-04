@@ -69,7 +69,7 @@ header("location:../");
 					
 					<div class="logo-wrapper">
 						<div class="logo">
-							<a href="../"><img src="../images/nasugbujobs-logo.png" alt="Logo" /></a>
+							<a href="../"><img src="../images/nasugbujobs-logo1.png" alt="Logo" /></a>
 						</div>
 					</div>
 					
@@ -393,6 +393,25 @@ header("location:../");
 													
 													
 												</div>
+												
+												<div class="clear"></div>
+												<div class="col-xss-12 col-xs-6 col-sm-6 col-md-4">
+												<div class="form-group mb-20">
+													<label>Education</label>
+														<select name="education" required class="selectpicker show-tick form-control" data-live-search="false" data-selected-text-format="count > 3" data-done-button="true" data-done-button-text="OK" data-none-selected-text="All">
+															<option value="" selected >Select</option>
+															<option value="education">Education</option>
+	
+															<option value="High/Senior High">High/Senior High</option>
+															<option value="Vocational">Vocational</option>
+															<option value="bachelor">Bachelor</option>
+															<option value="Masteral">Masteral</option>
+															<option value="Doctorate">Doctorate</option>
+														
+														</select>
+												
+														</div>
+														</div>
 
 												
 													

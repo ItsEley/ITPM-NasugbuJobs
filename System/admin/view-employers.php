@@ -20,7 +20,7 @@ header("location:../");
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 
-	<title>Nasugbu Jobs - <?php echo "$compname"; ?></title>
+	<title>Nasugbu Jobs - View Employers</title>
 	<meta name="description" content="Online Job Application System" />
 	<meta name="keywords" content="job, work, resume, applicants, application, employee, employer, hire, hiring, human resource management, hr, online job management, company, worker, career, recruiting, recruitment" />
 	<meta name="author" content="BatState">
@@ -206,11 +206,12 @@ header("location:../");
 								<div class="admin-content-wrapper">
 
 									<div class="admin-section-title">
-									
+								
 										<h2>VIew employers</h2>
 	
 										
 									</div>
+									<?php require 'constants/check_reply.php'; ?>
 									
 									
 									<div class="container-fluid">
@@ -273,11 +274,9 @@ header("location:../");
                                                         <td class="text-center"><?php echo $title;?></td>
                                                         <td class="text-center"><?php echo $job_count ?></td>
                                                         <td class="text-center"><?php echo $application_count ?></td>
-                                                        <td>
-                                                            <a href="edit.php?id=" class="edit_btn btn btn-primary" >Edit</a>
-                                                        </td>
-                                                        <td>
-                                                            <a href="delete.php?id=" class="del_btn btn btn-danger">Delete</a>
+                                                        
+                                                        <td class="text-center">
+                                                            <a href="delete-employer.php?member_no=<?php echo $memberno ?> " class="del_btn btn btn-danger">Delete</a>
                                                         </td>
                                                     </tr>
                                                     <?php
@@ -296,8 +295,7 @@ header("location:../");
                                             
                                         </div>
                                                                 
-									
-									/// content end
+<!-- end -->
 							</div>
 							
 						</div>

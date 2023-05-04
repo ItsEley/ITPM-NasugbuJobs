@@ -18,7 +18,7 @@ header("location:../");
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>Nasugbu Jobs - <?php echo "$compname"; ?></title>
+	<title>Nasugbu Jobs - Admin Home</title>
 	<meta name="description" content="Online Job Application System" />
 	<meta name="keywords" content="job, work, resume, applicants, application, employee, employer, hire, hiring, human resource management, hr, online job management, company, worker, career, recruiting, recruitment" />
 	<meta name="author" content="BatState">
@@ -201,7 +201,7 @@ header("location:../");
 
 									<div class="admin-section-title">
 									
-										<h2>Profile</h2>
+										<h2>Profile<?php $myfname.$mylname ?></h2>
 									
 										
 									</div>
@@ -217,7 +217,7 @@ header("location:../");
 												
 													<div class="form-group">
 														<label>First Name</label>
-														<input name="fname" required type="text" class="form-control" value="<?php echo "$myfname"; ?>" placeholder="Enter your first name">
+														<input name="fname" required type="text" class="form-control" value="<?php echo $myfname; ?>" placeholder="Enter your first name">
 													</div>
 													
 												</div>
@@ -226,7 +226,7 @@ header("location:../");
 												
 													<div class="form-group">
 														<label>Last Name</label>
-														<input name="lname" required type="text" class="form-control" value="<?php echo "$mylname"; ?>" placeholder="Enter your last name">
+														<input name="lname" required type="text" class="form-control" value="<?php echo $mylname; ?>" placeholder="Enter your last name">
 												</div>
 													
 												</div>
@@ -306,7 +306,7 @@ header("location:../");
 									
 										<div class="footer-about-us">
 										<h5 class="footer-title">About Nasugbu Jobs</h5>
-											<p>Nasugbu Jobs is an Online job Application System developed by BSIT-3101-BA Students for their group project in 2022.</p>
+										<p>Nasugbu Jobs is an Online job Application System developed by Team Amigos in 2023.</p>
 										</div>
 
 									</div>

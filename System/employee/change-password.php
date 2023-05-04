@@ -19,7 +19,7 @@ header("location:../");
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 
-	<title>Nasugbu Jobs - <?php echo "$compname"; ?></title>
+	<title>Nasugbu Jobs - Change Password</title>
 	<meta name="description" content="Online Job Application System" />
 	<meta name="keywords" content="job, work, resume, applicants, application, employee, employer, hire, hiring, human resource management, hr, online job management, company, worker, career, recruiting, recruitment" />
 	<meta name="author" content="BatState">
@@ -100,7 +100,7 @@ header("location:../");
 							</li>
 							
 							<li>
-								<a href="../employers.php">Employers</a>
+								<a href="../employers.php">Companies</a>
 							</li>
 							<li>
 								<a href="../contact.php">Contact Us</a>

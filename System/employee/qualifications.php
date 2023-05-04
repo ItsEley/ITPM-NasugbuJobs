@@ -29,7 +29,7 @@ $page = 1;
 ?>
 <head>
 
-<title>Nasugbu Jobs - <?php echo "$compname"; ?></title>
+<title>Nasugbu Jobs - Qualifications</title>
 	<meta name="description" content="Online Job Application System" />
 	<meta name="keywords" content="job, work, resume, applicants, application, employee, employer, hire, hiring, human resource management, hr, online job management, company, worker, career, recruiting, recruitment" />
 	<meta name="author" content="BatState">
@@ -110,7 +110,7 @@ $page = 1;
 							</li>
 							
 							<li>
-								<a href="../employers.php">Employers</a>
+								<a href="../employers.php">Companies</a>
 							</li>
 							<li>
 								<a href="../contact.php">Contact Us</a>

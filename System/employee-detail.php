@@ -259,7 +259,7 @@ header("location:./");
 										
 										<h2 class="heading mb-15"><?php echo "$myfname"; ?> <?php echo "$mylname"; ?></h2>
 									
-										<p class="location"><i class="fa fa-map-marker"></i> <?php echo "$mybarangay"; ?>, <?php echo "$mycity"; ?><span class="mh-5">|</span> <i class="fa fa-phone"></i> <?php echo "$myphone"; ?></p>
+										<p class="location"><i class="fa fa-map-marker"></i> <?php echo "$mybarangay"; ?>, <?php echo "$mycity"; ?><span class="mh-5">|</span> <i class="fa fa-phone"></i> <?php echo "$myphone"; ?><span class="mh-5">|</span> <i class="fa fa-envelope"></i> <?php echo "$mymail"; ?></p>
 										
 										
 										<ul class="meta-list clearfix">
@@ -273,12 +273,13 @@ header("location:./");
 											</li>
 											<li>
 												<h4 class="heading">Education:</h4>
-												<?php echo "$myedu"; ?> in <?php echo "$mytitle"; ?>
+												<?php echo "$myedu"; ?> in 
 											</li>
 											<li>
-												<h4 class="heading">Email: </h4>
-												<?php echo "$mymail"; ?>
+												<h4 class="heading">Field of Expertise:</h4>
+												<?php echo "$mytitle"; ?>
 											</li>
+											
 										</ul>
 										
 									</div>
@@ -297,6 +298,7 @@ header("location:./");
 												
 												<ul class="employee-detail-list">
 												<?php
+												echo $myedu;
 												require 'constants/db_config.php';
 												try {
                                                 $conn = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password);
@@ -647,16 +649,10 @@ header("location:./");
 										<h3>Job Match</h3>
 												
 								
-										<?php echo $certcount ?>
-										<?php echo $trainingcount ?>
-										<?php echo $rowb['title'] ?>
-										<?php echo "$myedu"; ?>
-										<?php echo $myage?>
-										<?php echo $jobid2?>
-										<?php echo $rowb2['category'] ?>
-										<?php echo $rowb2['agereq'] ?>
-										<?php echo $rowb2['barangay'] ?>
-										<?php echo $mybarangay ?>
+										
+									
+									
+									
 
 										<?php
 									
@@ -719,25 +715,40 @@ header("location:./");
 
 											}
 
-											$finalmatch = $match2 + $match1 + $training1 + $cert1 +$agematch;
-
 											
-											// $ageparameter =0;
-
-											// if($rowb2['agereq'] = 0){
-											// 	$ageparameter = 0;
-											// }elseif ($rowb2['agereq'] = 18) {
-
-											// 	$ageparameter = 18;
-											// }elseif ($rowb2['agereq'] = 31) {
-
-											// 	$ageparameter = 31;
-											// }elseif ($rowb2['agereq'] = 44) {
-
-											// 	$ageparameter = 44;
-											// }
-											
+											$educmatch1 =0;		
+											if($rowb2['education'] == "High/Senior High"){
+												$educmatch1 += 20;
+											} elseif($rowb2['education'] == "Vocational"){
+												if($myedu == "High/Senior High"){
+													$educmatch1 += 0;
+												} else{
+													$educmatch1 += 20;
+												}
+											}elseif($rowb2['education'] == "Bachelor"){
+												if($myedu == "High/Senior High" or "Vocational"){
+													$educmatch1 += 0;
+												} else{
+													$educmatch1 += 20;
+												}
+											}
+											elseif($rowb2['education'] == "Masteral"){
+												if($myedu == "Masteral" or "Doctorate"){
+													$educmatch1 += 20;
+												} else{
+													$educmatch1 += 0;
+												}
+											}elseif($rowb2['education'] == "Doctorate"){
+												if($myedu == "Doctorate"){
+													$educmatch1 += 20;
+												} else{
+													$educmatch1 += 0;
+												}
+											}else{
+												$educmatch1 += 0;
+											}
 										
+											$finalmatch = $match2 + $match1 + $training1 + $cert1 +$agematch +$educmatch1;
 										?>
 
 												 <h3>This applicant is <a class="text-danger"><?php echo $finalmatch."%"; ?></a> matched for the job .</h3>

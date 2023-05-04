@@ -50,7 +50,7 @@ $title = "Job List";
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 
-	<title>Nasugbu Jobs - Job List<?php echo "$compname"; ?></title>
+	<title>Nasugbu Jobs - Job List</title>
 	<meta name="description" content="Online Job Application System" />
 	<meta name="keywords" content="job, work, resume, applicants, application, employee, employer, hire, hiring, human resource management, hr, online job management, company, worker, career, recruiting, recruitment" />
 	<meta name="author" content="BatState">
@@ -405,6 +405,22 @@ $title = "Job List";
 																<?php echo $row['experience']; ?>
 															</li>
 															<li>
+																<span>Age Requirement:</span>
+																<?php $age1 =0;
+																if ($row['agereq'] == 0){
+																	$age1 = "No Age Req.";
+
+																}elseif($row['agereq'] == 18){
+																	$age1 = "18 - 30 yrs. old";
+																}elseif($row['agereq'] == 31){
+																	$age1 = "31 - 43 yrs. old";
+																}elseif($row['agereq'] == 44){
+																	$age1 = "44 yrs. old +";
+																}
+																echo $age1;
+																?>
+															</li>
+															<li>
 																<span>Deadline: </span>
 																<?php echo "$post_month"; ?> <?php echo "$post_date"; ?>, <?php echo "$post_year"; ?>
 															</li>
@@ -424,7 +440,8 @@ $title = "Job List";
 															<a><?php echo $row['category']; ?></a>
 
 															<div class="col-sm-2 col-md-1"></div>
-															<a><?php echo $row['agereq']; ?></a>
+															
+															<a><?php echo $row['education']; ?></a>
 															<a><?php echo $row['salary']; ?></a>
 															
 														
